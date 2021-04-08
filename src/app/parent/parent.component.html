@@ -1,0 +1,16 @@
+<h3 class="lead m-3">Insert new server</h3>
+<div class="row mx-3">
+  <div class="form-group mx-auto">
+    <label>server name</label>
+    <input type="text" class="form-control  my-1" #newServerName >
+    <label>server content</label>
+    <input type="text" class="form-control my-1" #newServerContent >
+    <label>server status</label>
+    <input type="text" class="form-control my-1" #newServerStatus  >
+    <div class="form-group text-center mx-auto">
+      <button class="btn btn-outline-success my-3 mr-2" (click)="addServer(newServerName.value,newServerStatus.value)">Add Server <i class="fa fa-user fa-x"></i></button>
+      <button class="btn btn-outline-primary my-3" (click)="addBluePrint(newServerName.value,newServerStatus.value)">Add DataBase <i class="fa fa-server" aria-hidden="true"></i></button>
+    </div>
+  </div>
+
+</div>

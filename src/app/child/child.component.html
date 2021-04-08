@@ -1,0 +1,19 @@
+<div class="row mx-3">
+  <div class="list-group-item mb-2 list-group-item-action  clearfix">
+    <div class="pull-left ">
+      <h6 class="">{{ element.name }}</h6>
+      <p class="">
+        <strong [ngStyle]="{color : serverColor()}" *ngIf="element.type === 'server'">{{ element.content }}</strong>
+        <strong [ngStyle]="{color : serverColor()}" *ngIf="element.type === 'database'">{{ element.content }}</strong>
+      </p>
+    </div>
+    <div class="pull-right">
+      <span class="badge badge-warning badge-pill" *ngIf="element.type === 'server'">online</span>
+      <span class="badge badge-danger badge-pill" *ngIf="element.type !== 'server'">offline</span>
+      <p class="list-group-item-text">
+        <i class="fa fa-circle ml-3"  [ngStyle]="{color: statusColor()}" aria-hidden="true"></i>
+
+      </p>
+    </div>
+  </div>
+</div>

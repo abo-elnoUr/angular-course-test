@@ -1,0 +1,11 @@
+<div class="container">
+
+  <app-parent (serverCreate)="onAddServer($event)" (DataBaseCreate)="onAddDataBase($event)"></app-parent>
+
+  <hr>
+
+  <div class="col-xs-12">
+    <app-child *ngFor="let server of servers" [element]="server"></app-child>
+  </div>
+
+</div>
