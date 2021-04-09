@@ -17,16 +17,16 @@ export class MouseDirective implements OnInit {
   @HostListener("mouseenter") mouseover(eventData: Event) {
     this._Renderer2.setStyle(
       this._ElementRef.nativeElement,
-      "font-weight",
-      "700"
+      "letter-spacing",
+      "10px"
     );
   }
 
   @HostListener("mouseleave") mouseleave(eventData: Event) {
     this._Renderer2.setStyle(
       this._ElementRef.nativeElement,
-      "font-weight",
-      "400"
+      "letter-spacing",
+      "4px"
     );
   }
 }
