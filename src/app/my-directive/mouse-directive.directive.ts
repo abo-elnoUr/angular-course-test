@@ -3,6 +3,7 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
+  Input,
   OnInit,
   Renderer2
 } from "@angular/core";
@@ -13,9 +14,14 @@ import {
 export class MouseDirective implements OnInit {
   constructor(private _ElementRef: ElementRef, private _Renderer2: Renderer2) {}
 
-  ngOnInit() {}
+  @Input() defaultColor = "black";
+  @Input("mouseDirective") mainColor = "dodgerblue";
 
-  @HostBinding("style.color") color: string = "black";
+  ngOnInit() {
+    this.color = this.defaultColor;
+  }
+
+  @HostBinding("style.color") color: string;
 
   @HostListener("mouseenter") mouseover(eventData: Event) {
     this._Renderer2.setStyle(
@@ -23,7 +29,7 @@ export class MouseDirective implements OnInit {
       "letter-spacing",
       "10px"
     );
-    this.color = "dodgerblue";
+    this.color = this.mainColor;
   }
 
   @HostListener("mouseleave") mouseleave(eventData: Event) {
@@ -32,6 +38,6 @@ export class MouseDirective implements OnInit {
       "letter-spacing",
       "4px"
     );
-    this.color = "black";
+    this.color = this.defaultColor;
   }
 }

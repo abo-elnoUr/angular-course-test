@@ -3,7 +3,8 @@
     <div class="pull-left ">
       <h6 class="">{{ element.name }}</h6>
       <p class="">
-        <strong [ngStyle]="{color : serverColor()}" *ngIf="element.type === 'server'">{{ element.content }}</strong>
+        <!-- <strong [ngStyle]="{color : serverColor()}" *ngIf="element.type === 'server'">{{ element.content }}</strong> -->
+        <strong [ngStyle]="{color : serverColor()}" *conditionDirective="element.type !== 'server'">{{ element.content }}</strong>
         <strong [ngStyle]="{color : serverColor()}" *ngIf="element.type === 'database'">{{ element.content }}</strong>
       </p>
     </div>
