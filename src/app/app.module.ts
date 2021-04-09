@@ -7,6 +7,7 @@ import { ParentComponent } from "./parent/parent.component";
 import { ChildComponent } from "./child/child.component";
 import { ColorDirective } from "./my-directive/color-directive.directive";
 import { BackgroundDirective } from "./my-directive/background-directive.directive";
+import { MouseDirective } from "./my-directive/mouse-directive.directive";
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -15,7 +16,8 @@ import { BackgroundDirective } from "./my-directive/background-directive.directi
     ParentComponent,
     ChildComponent,
     ColorDirective,
-    BackgroundDirective
+    BackgroundDirective,
+    MouseDirective
   ],
   bootstrap: [AppComponent]
 })
