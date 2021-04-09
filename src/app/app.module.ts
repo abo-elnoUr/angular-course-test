@@ -6,10 +6,17 @@ import { AppComponent } from "./app.component";
 import { ParentComponent } from "./parent/parent.component";
 import { ChildComponent } from "./child/child.component";
 import { ColorDirective } from "./my-directive/color-directive.directive";
+import { BackgroundDirective } from "./my-directive/background-directive.directive";
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, ParentComponent, ChildComponent, ColorDirective],
+  declarations: [
+    AppComponent,
+    ParentComponent,
+    ChildComponent,
+    ColorDirective,
+    BackgroundDirective
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
