@@ -1,6 +1,7 @@
 import {
   Directive,
   ElementRef,
+  HostBinding,
   HostListener,
   OnInit,
   Renderer2
@@ -14,12 +15,15 @@ export class MouseDirective implements OnInit {
 
   ngOnInit() {}
 
+  @HostBinding("style.color") color: string = "black";
+
   @HostListener("mouseenter") mouseover(eventData: Event) {
     this._Renderer2.setStyle(
       this._ElementRef.nativeElement,
       "letter-spacing",
       "10px"
     );
+    this.color = "dodgerblue";
   }
 
   @HostListener("mouseleave") mouseleave(eventData: Event) {
@@ -28,5 +32,6 @@ export class MouseDirective implements OnInit {
       "letter-spacing",
       "4px"
     );
+    this.color = "black";
   }
 }
